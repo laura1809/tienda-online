@@ -1,0 +1,14 @@
+[
+    {
+        "codProveedor": 1,
+        "nombreProveedor": "Tecnoparts Inc."
+    },
+    {
+        "codProveedor": 2,
+        "nombreProveedor": "ElectroMega Solutions"
+    },
+    {
+        "codProveedor": 3,
+        "nombreProveedor": "Gadget World Producers"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "codCategoria": 1,
+        "nombreCategoria": "Laptops"
+    },
+    {
+        "codCategoria": 2,
+        "nombreCategoria": "Teléfonos"
+    },
+    {
+        "codCategoria": 3,
+        "nombreCategoria": "Tabletas"
+    }
+]

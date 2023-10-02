@@ -1,0 +1,73 @@
+{"products":[
+    {
+        "codProducto": 101,
+        "nombre": "Laptop HP Envy X360",
+        "precioUnitario": 899.99,
+        "codCategoria": 1,
+        "codProveedor": 1
+    },
+    {
+        "codProducto": 102,
+        "nombre": "iPhone 13 Pro",
+        "precioUnitario": 1099.99,
+        "codCategoria": 2,
+        "codProveedor": 2
+    },
+    {
+        "codProducto": 103,
+        "nombre": "Samsung Galaxy Tab S7",
+        "precioUnitario": 649.99,
+        "codCategoria": 3,
+        "codProveedor": 3
+    },
+    {
+        "codProducto": 104,
+        "nombre": "Dell XPS 13",
+        "precioUnitario": 1199.99,
+        "codCategoria": 1,
+        "codProveedor": 1
+    },
+    {
+        "codProducto": 105,
+        "nombre": "Google Pixel 6",
+        "precioUnitario": 799.99,
+        "codCategoria": 2,
+        "codProveedor": 2
+    },
+    {
+        "codProducto": 106,
+        "nombre": "Apple iPad Air",
+        "precioUnitario": 499.99,
+        "codCategoria": 3,
+        "codProveedor": 3
+    },
+    {
+        "codProducto": 107,
+        "nombre": "Lenovo ThinkPad X1 Carbon",
+        "precioUnitario": 1399.99,
+        "codCategoria": 1,
+        "codProveedor": 1
+    },
+    {
+        "codProducto": 108,
+        "nombre": "OnePlus 9 Pro",
+        "precioUnitario": 799.99,
+        "codCategoria": 2,
+        "codProveedor": 2
+    },
+    {
+        "codProducto": 109,
+        "nombre": "Microsoft Surface Pro 7",
+        "precioUnitario": 799.99,
+        "codCategoria": 3,
+        "codProveedor": 3
+    },
+    {
+        "codProducto": 110,
+        "nombre": "Acer Predator Helios 300",
+        "precioUnitario": 1199.99,
+        "codCategoria": 1,
+        "codProveedor": 1
+    }
+]
+}
