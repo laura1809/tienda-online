@@ -1,13 +1,14 @@
 import { useState , useEffect, createContext } from "react";
-import {products} from "../data/products.json"
+import getProducts from "../api/uploadProducts";
 
 export const DataContext = createContext();
 
 export const DataProvider = (props) =>{
-    const [dataProducts,setDataProducts] = useState([])
+    
+    const [products,setProducts] = useState([])
 
-    useEffect(()=>{
-        setDataProducts(products)
+    useEffect(()=>{ 
+        setProducts(getProducts())
     },[])
 
     

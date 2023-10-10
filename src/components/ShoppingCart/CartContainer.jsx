@@ -1,8 +1,9 @@
 import { useCartContext } from '../../context/CartContext';
 import CartItem from '../ShoppingCart/CartItem'
 const CartContainer = () => {
-    const { cart, totalPrice, clearCart } = useCartContext();
+    const { cart, totalPrice, clearCart, requestBody } = useCartContext();
 
+    console.log(requestBody)
     const onBuy = () => {
         clearCart()
     }

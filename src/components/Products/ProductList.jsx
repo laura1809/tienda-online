@@ -1,7 +1,25 @@
+import { useEffect, useState } from "react"
 import ProductItem from "./ProductItem"
-import {products} from "../../data/products.json"
+import getProducts from "../../api/uploadProducts"
+
 
 const ProductList = () => {
+
+    const [productsData, setProductsData] = useState([])
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            
+            const data = await getProducts();
+            setProductsData(data);
+          } catch (error) {
+            console.error('Error al obtener productos:', error);
+          }
+        };
+    
+        fetchData(); // Llama a la función asincrónica dentro de useEffect
+    
+      }, []);
     return (
         <>
             <table className="table table-striped mt-2 border">
@@ -16,7 +34,7 @@ const ProductList = () => {
                 </thead>
                 <tbody>
                     {
-                        products.map((product,index)=>(
+                        productsData.map((product,index)=>(
                             <ProductItem key={index} product={product} />
                         ))
                     }
