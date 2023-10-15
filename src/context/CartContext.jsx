@@ -31,13 +31,13 @@ const CartProvider = ({ children }) => {
     const newProductToBodyRequest = (codeProduct, quantitySold) => {
         const newProduct = {
             "codeProduct": codeProduct,
-            "quantitySold": quantitySold
+            "quantitySold": Number(quantitySold)
         }
 
         setRequestBody(prevState => [...prevState, newProduct]);
     }
 
-    const clearCart = () => {
+    const clearCart = (idCustomer, nameCustomer) => {
         Swal.fire({
             title: '¿Estás seguro de realizar la compra?',
             showDenyButton: true,
@@ -45,7 +45,7 @@ const CartProvider = ({ children }) => {
             denyButtonText: `Cancelar`,
         }).then((result) => {
             if (result.isConfirmed) {
-                fetchPostSale()
+                fetchPostSale(idCustomer, nameCustomer)
                 Swal.fire('¡Compra realizada!', '', 'success')
                 setCart([])
             }
@@ -53,13 +53,14 @@ const CartProvider = ({ children }) => {
 
     }
 
-    const fetchPostSale= async () => {
+    const fetchPostSale= async (idCustomer, nameCustomer) => {
         try { 
-          const data = await confirmSale(1007,'Andres',totalPrice,requestBody);
+          const data = await confirmSale(idCustomer, nameCustomer,totalPrice,requestBody);
         } catch (error) {
           console.error( error);
         }
       };
+
     const isInCart = (id) => {
         return cart.find(product => product.codeProduct === id) ? true : false
     }
