@@ -9,11 +9,11 @@ const CartContainer = () => {
     const [idCustomer, setIdCustomer] = useState('');
     const [nameCustomer, setNameCustomer] = useState('');
 
-    const handleIdCustomer = () => {
+    const handleIdCustomer = (e) => {
         setIdCustomer(e.target.value)
     }
 
-    const handleNameCustomer = () => {
+    const handleNameCustomer = (e) => {
         setNameCustomer(e.target.value)
     }
 
@@ -62,7 +62,7 @@ const CartContainer = () => {
                         </tbody>
                     </table>
                 </div>
-                <div className='col-6'><CustomerForm onBuy={onBuy} handleIdCustomer={handleIdCustomer} handleNameCustomer={handleNameCustomer} /></div>
+                <div className='col-6'><CustomerForm onBuy={onBuy} nameCustomer={nameCustomer} idCustomer={idCustomer} handleIdCustomer={handleIdCustomer} handleNameCustomer={handleNameCustomer} /></div>
             </div>
         </>
     )

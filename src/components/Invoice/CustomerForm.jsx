@@ -1,4 +1,4 @@
-const CustomerForm = ({onBuy, handleIdCustomer ,handleNameCustomer}) => {
+const CustomerForm = ({onBuy,idCustomer,nameCustomer, handleIdCustomer ,handleNameCustomer}) => {
     return (
         <div class="container">
             <div class="row justify-content-center">
@@ -14,10 +14,10 @@ const CustomerForm = ({onBuy, handleIdCustomer ,handleNameCustomer}) => {
                         </div>
                         <form>
                             <div className="form-group p-3">
-                                <input type="email" class="form-control rounded-0 border-0 border-bottom border-dark border-1" id="exampleInputEmail1" placeholder="Ingresa tu nombre" onChange={handleIdCustomer} />
+                                <input type="email" class="form-control rounded-0 border-0 border-bottom border-dark border-1" id="exampleInputEmail1" placeholder="Ingresa tu nombre" value={idCustomer} onChange={handleIdCustomer} />
                             </div>
                             <div className="form-group p-3">
-                                <input type="email" class="form-control rounded-0 border-0 border-bottom border-dark border-1" id="exampleInputEmail1" placeholder="Número de documento" onChange={handleNameCustomer} />
+                                <input type="email" class="form-control rounded-0 border-0 border-bottom border-dark border-1" id="exampleInputEmail1" placeholder="Número de documento" value={nameCustomer} onChange={handleNameCustomer} />
                             </div>
                             <div className="form-group p-3 justify-content-center text-center"><button type="button" className="btn btn-success" onClick={onBuy}>Realizar compra</button></div>
 

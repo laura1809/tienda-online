@@ -47,6 +47,7 @@ const CartProvider = ({ children }) => {
             if (result.isConfirmed) {
                 fetchPostSale(idCustomer, nameCustomer)
                 Swal.fire('¡Compra realizada!', '', 'success')
+                setRequestBody([])
                 setCart([])
             }
         })
