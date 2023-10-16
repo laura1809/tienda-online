@@ -14,10 +14,10 @@ const CustomerForm = ({onBuy,idCustomer,nameCustomer, handleIdCustomer ,handleNa
                         </div>
                         <form>
                             <div className="form-group p-3">
-                                <input type="email" class="form-control rounded-0 border-0 border-bottom border-dark border-1" id="exampleInputEmail1" placeholder="Ingresa tu nombre" value={idCustomer} onChange={handleIdCustomer} />
+                                <input type="text" class="form-control rounded-0 border-0 border-bottom border-dark border-1" id="id" placeholder="Número de documento" value={idCustomer} onChange={handleIdCustomer} />
                             </div>
                             <div className="form-group p-3">
-                                <input type="email" class="form-control rounded-0 border-0 border-bottom border-dark border-1" id="exampleInputEmail1" placeholder="Número de documento" value={nameCustomer} onChange={handleNameCustomer} />
+                                <input type="text" class="form-control rounded-0 border-0 border-bottom border-dark border-1" id="name" placeholder="Ingresa tu nombre" value={nameCustomer} onChange={handleNameCustomer} />
                             </div>
                             <div className="form-group p-3 justify-content-center text-center"><button type="button" className="btn btn-success" onClick={onBuy}>Realizar compra</button></div>
 

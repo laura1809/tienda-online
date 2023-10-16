@@ -54,13 +54,7 @@ const CartProvider = ({ children }) => {
 
     }
 
-    const fetchPostSale= async (idCustomer, nameCustomer) => {
-        try { 
-          const data = await confirmSale(idCustomer, nameCustomer,totalPrice,requestBody);
-        } catch (error) {
-          console.error( error);
-        }
-      };
+   
 
     const isInCart = (id) => {
         return cart.find(product => product.codeProduct === id) ? true : false
@@ -81,6 +75,13 @@ const CartProvider = ({ children }) => {
     const totalPrice = cart.reduce((pre, act) => pre + act.unitPrice * act.quantitySold, 0).toFixed(2);
 
 
+    const fetchPostSale= async (idCustomer, nameCustomer) => {
+        try { 
+          const data = await confirmSale(idCustomer, nameCustomer,totalPrice,requestBody);
+        } catch (error) {
+          console.error( error);
+        }
+      };
 
     let totalProducts = cart.length
 

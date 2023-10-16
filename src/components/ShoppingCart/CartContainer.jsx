@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useCartContext } from '../../context/CartContext';
 import CustomerForm from '../Invoice/CustomerForm';
 import CartItem from '../ShoppingCart/CartItem'
@@ -18,7 +19,7 @@ const CartContainer = () => {
     }
 
     const onBuy = () => {
-        clearCart(idCustomer, nameCustomer)
+        clearCart(idCustomer,nameCustomer)
     }
 
     if (cart.length === 0) {
@@ -62,7 +63,7 @@ const CartContainer = () => {
                         </tbody>
                     </table>
                 </div>
-                <div className='col-6'><CustomerForm onBuy={onBuy} nameCustomer={nameCustomer} idCustomer={idCustomer} handleIdCustomer={handleIdCustomer} handleNameCustomer={handleNameCustomer} /></div>
+                <div className='col-6'><CustomerForm onBuy={onBuy} idCustomer={idCustomer} nameCustomer={nameCustomer}  handleIdCustomer={handleIdCustomer} handleNameCustomer={handleNameCustomer} /></div>
             </div>
         </>
     )
