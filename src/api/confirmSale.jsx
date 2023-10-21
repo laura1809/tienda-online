@@ -9,7 +9,6 @@ const corfimSale = async (idCustomer, nameCustomer, total, requestBody) => {
                 total: total
             }
         });
-        alert('Compra realizada')
         return response;
     } catch (error) {
         console.log('Código de estado:', error.response.status);

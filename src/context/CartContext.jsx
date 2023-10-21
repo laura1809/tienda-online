@@ -9,22 +9,36 @@ const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
     const [requestBody, setRequestBody] = useState([]);
 
+    const isInCart = (id) => {
+        return cart.find(product => product.codeProduct === id) ? true : false
+    }
+
     const addProduct = (item, quantitySold) => {
-        if (isInCart(item.codeProduct)) {
+
+        if (quantitySold == 0) {
+            Swal.fire({
+                icon: 'info',
+                title: 'Debes agregar por lo menos 1 unidad',
+                text: '¡Escoge las unidades que necesites del prodducto!',
+            });
+        } else if (isInCart(item.codeProduct)) {
             Swal.fire({
                 icon: 'info',
                 title: 'Ya agregaste este producto a tu carrito',
                 text: '¡Puedes mirar más opciones!',
             });
+        } else {
+            setCart([...cart, { ...item, quantitySold: quantitySold }]);
+            Swal.fire({
+                icon: 'success',
+                title: 'Producto agregado a tu carrito',
+                text: '¡Sigue comprando!',
+
+            });
+
         }
 
-        setCart([...cart, { ...item, quantitySold: quantitySold }]);
-        Swal.fire({
-            icon: 'success',
-            title: 'Producto agregado a tu carrito',
-            text: '¡Sigue comprando!',
 
-        });
     }
 
 
@@ -54,11 +68,9 @@ const CartProvider = ({ children }) => {
 
     }
 
-   
 
-    const isInCart = (id) => {
-        return cart.find(product => product.codeProduct === id) ? true : false
-    }
+
+
 
     const removeProduct = (id) => {
 
@@ -75,13 +87,13 @@ const CartProvider = ({ children }) => {
     const totalPrice = cart.reduce((pre, act) => pre + act.unitPrice * act.quantitySold, 0).toFixed(2);
 
 
-    const fetchPostSale= async (idCustomer, nameCustomer) => {
-        try { 
-          const data = await confirmSale(idCustomer, nameCustomer,totalPrice,requestBody);
+    const fetchPostSale = async (idCustomer, nameCustomer) => {
+        try {
+            const data = await confirmSale(idCustomer, nameCustomer, totalPrice, requestBody);
         } catch (error) {
-          console.error( error);
+            console.error(error);
         }
-      };
+    };
 
     let totalProducts = cart.length
 

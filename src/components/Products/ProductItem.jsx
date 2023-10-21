@@ -17,7 +17,7 @@ const ProductItem = ({ product }) => {
                 <td>{name}</td>
                 <td>$ {unitPrice}</td>
                 <td>
-                    <input type="number" id="typeNumber" className="form-control" min={1} placeholder="Cantidad" onChange={(e) => (setQuantity(e.target.value))} />
+                    <input type="number" id="typeNumber" className="form-control" min={1} placeholder="Cantidad" onChange={(e) => (setQuantity(e.target.value))} value={quantity} />
                 </td>
                 <td><button type="button" className="btn btn-primary" onClick={onAdd}>Añadir al carrito</button></td>
             </tr>
